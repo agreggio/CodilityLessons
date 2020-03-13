@@ -5,15 +5,33 @@
  */
 package com.example;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  *
  * @author agreggio
  */
 class Solution {
+
+    public int BinaryGap(int N) {
+        String Aux = Integer.toBinaryString(N);
+        int count = 0;
+        Aux = Aux.replace("1", "11");
+
+        Pattern pattern = Pattern.compile("(1{1}0{1,}1{1})");
+        Matcher matcher = pattern.matcher(Aux);
+
+        while (matcher.find()) {
+            if (count < ((matcher.group().length() -2))) {
+                count = matcher.group().length() - 2;
+            }
     
-    public int BinaryGap(int N){
-    
-    return 0;
+        }
+   
+        return count;
     }
 
     public int[] CyclicRotation(int[] A, int K) {
@@ -35,12 +53,11 @@ class Solution {
         }
 
     }
-    
-    public int OddOccurrencesInArray(int[] A){
+
+    public int OddOccurrencesInArray(int[] A) {
         int rta = 0;
-    
+
         return rta;
     }
-    
 
 }

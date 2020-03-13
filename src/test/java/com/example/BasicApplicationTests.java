@@ -12,14 +12,16 @@ public class BasicApplicationTests {
 Solution solution = new Solution();
 
 	@Test
-	public void TestOne() {
-            int[] A = {5,4,8,9}; 
-            
-   
-            
-            System.out.println(Arrays.toString(solution.CyclicRotation(A,3)));
+	public void BinaryGap() {
+
+            System.out.println("BinaryGap: " + solution.BinaryGap(1041));
 	}
         
-        
+        @Test
+	public void CyclicRotation() {
+            int[] A = {5,4,8,9}; 
+
+            System.out.println("CyclicRotation: " + Arrays.toString(solution.CyclicRotation(A,3)));
+	}
 
 }
